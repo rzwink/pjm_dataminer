@@ -25,6 +25,6 @@ Go to the page, click on explore data.  In google chrome
 python fetch_pjm_csv.py -u pnode
 python fetch_pjm_csv.py -u ops_sum_prev_period
 python fetch_pjm_csv.py -u hrl_load_metered
-python fetch_pjm_csv.py -u solar_get
+python fetch_pjm_csv.py -u solar_gen
 ```
 optionally add -o output.csv to override filename
