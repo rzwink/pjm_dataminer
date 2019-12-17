@@ -37,6 +37,7 @@ args = parser.parse_args()
 
 # create header with subscription key
 headers = get_subsription_headers()
+print(f"Fetch subscription header {headers}")
 
 if args.list is True:
     list = get_pjm_list()
@@ -49,12 +50,13 @@ if args.list is True:
 # check for --url
 if args.url:
     url = get_pjm_url(args.url)
-    print("set url to %s" % url)
+    print("Set url to %s" % url)
 else:
     exit()
 
 # fetch data at URL
 response = requests.get(url, headers=headers)
+print(f"Received response {response.status_code}")
 
 if args.output:
     output = args.output
@@ -66,7 +68,7 @@ else:
         + "."
         + args.format
     )
-
+print(f"Writing {args.format}")
 if args.format == "raw":
     print(response.json())
 else:
@@ -84,3 +86,4 @@ else:
         print(data.csv)
     else:
         exit("Invalid output format")
+print("Complete")
