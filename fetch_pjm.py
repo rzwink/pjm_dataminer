@@ -68,7 +68,7 @@ else:
         + "."
         + args.format
     )
-print(f"Writing {args.format}")
+print(f"Writing {args.format} - {output}")
 if args.format == "raw":
     print(response.json())
 else:
