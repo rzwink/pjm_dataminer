@@ -122,3 +122,17 @@ python fetch_pjm.py -u solar_gen
 |unverified_five_min_lmps|*Unverified Five Minute LMPs* This feed contains the unverified real-time LMP data for a subset of pnodes which are zonal, aggregate, interface, hub and 500 Kv bus.|
 |utc_bid_screening|*Up-to-Congestion Bid Screening* This feed contains all the reference prices used for virtual credit screening when up-to-congestion bids are being submitted.|
 |wind_gen|*Wind Generation* This feed provides the hourly wind generation amounts in PJM.  The "Other" area includes external units and other units where the original regional location is not known|
+
+## Extra bonus
+### Create tables from generated CSV
+```shell script
+pip install csvkit
+csvsql --dialect postgres --snifflimit 100000 bal_trns_cong_prelim_billing-20191217123621.csv
+```
+*choose from 'firebird', 'mssql', 'mysql', 'oracle', 'postgresql', 'sqlite', 'sybase'*
+
+### If you are going to modify this script this take advantage of pre-commit hooks
+```shell script
+pip install pre-commit
+pre-commit install
+```
