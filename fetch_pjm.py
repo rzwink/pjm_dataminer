@@ -1,12 +1,19 @@
 import argparse
 import datetime
+import logging
 
+import coloredlogs
 import requests
 import tablib
 
 from get_pjm_url import get_pjm_list
 from get_pjm_url import get_pjm_url
 from get_subscription_headers import get_subsription_headers
+
+# create logger with 'spam_application'
+logger = logging.getLogger("fetch_pjm")
+logger.setLevel(logging.DEBUG)
+coloredlogs.install()
 
 # initiate the parser
 parser = argparse.ArgumentParser()
@@ -37,7 +44,7 @@ args = parser.parse_args()
 
 # create header with subscription key
 headers = get_subsription_headers()
-print(f"Fetch subscription header {headers}")
+logger.info(f"Fetch subscription header {headers}")
 
 if args.list is True:
     list = get_pjm_list()
@@ -50,13 +57,13 @@ if args.list is True:
 # check for --url
 if args.url:
     url = get_pjm_url(args.url)
-    print("Set url to %s" % url)
+    logger.info("Set url to %s" % url)
 else:
     exit()
 
 # fetch data at URL
 response = requests.get(url, headers=headers)
-print(f"Received response {response.status_code}")
+logger.info(f"Received response {response.status_code}")
 
 if args.output:
     output = args.output
@@ -68,7 +75,7 @@ else:
         + "."
         + args.format
     )
-print(f"Writing {args.format} - {output}")
+logger.info(f"Writing {args.format} - {output}")
 if args.format == "raw":
     print(response.json())
 else:
@@ -86,4 +93,4 @@ else:
         print(data.csv)
     else:
         exit("Invalid output format")
-print("Complete")
+logger.info("Complete")
