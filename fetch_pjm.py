@@ -25,11 +25,10 @@ args = parser.parse_args()
 
 if args.list is True:
     list = get_pjm_list()
-    print("|url|description|")
+    print("|url|display name and description|")
     print("|---|---|")
     for l in list:
-        print(f"|{l['name']}|{l['description']}|")
-    # print(list)
+        print(f"|{l['name']}|*{l['displayName']}* {l['description']}|")
     exit()
 
 # check for --url
