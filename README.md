@@ -24,8 +24,13 @@ virtualenv venv -p python3
 . ./venv/bin/activate
 pip install -r requirements.txt
 ```
+### If you are going to modify this script then take advantage of pre-commit hooks
+```shell script
+pip install pre-commit
+pre-commit install
+```
 
-### Run the data collection script, examples
+## Run the data collection script, examples
 ```shell script
 python fetch_pjm.py --help
 python fetch_pjm.py --version
@@ -132,9 +137,3 @@ pip install csvkit
 csvsql --dialect postgres --snifflimit 100000 bal_trns_cong_prelim_billing-20191217123621.csv
 ```
 *choose from 'firebird', 'mssql', 'mysql', 'oracle', 'postgresql', 'sqlite', 'sybase'*
-
-### If you are going to modify this script this take advantage of pre-commit hooks
-```shell script
-pip install pre-commit
-pre-commit install
-```
