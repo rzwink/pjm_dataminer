@@ -1,6 +1,9 @@
 # PJM data miner scripts to make exporting data easier
 ![JPM Data Miner Logo](img/pablo.png "PJM Data Miner")
 
+PJM is a regional transmission organization (RTO) that coordinates the movement of wholesale electricity in all or parts of 13 states and the District of Columbia.
+
+The fetch_pjm.py script connects to available public apis and outputs in various formats for the convenient population of a data warehouse.
 ```text
 usage: fetch_pjm.py [-h] [--url URL] [--output OUTPUT] [--format FORMAT] [--list] [--version]
 
