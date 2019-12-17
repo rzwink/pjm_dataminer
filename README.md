@@ -41,8 +41,8 @@ python fetch_pjm.py -u solar_gen
 ```
 
 
-### Available URLs
-|url|display name and description|
+### Available URL keys
+|url key|display name and description|
 |---|---|
 |act_sch_interchange|*Actual/Schedule Summary Report* Hourly actual, scheduled, and inadvertent flows by tie line for each hour. Positive Values represent an import into PJM and Negative Values represent and export from PJM|
 |ancillary_services|*Ancillary Service LMPs* This feed contains hourly ancillary services pricing (LMP) data. RSS Notification for this feed contains Market Day.|
