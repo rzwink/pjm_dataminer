@@ -1,4 +1,6 @@
 # PJM data miner scripts to make exporting data easier
+![JPM Data Miner Logo](img/pablo.png "PJM Data Miner")
+
 ```text
 usage: fetch_pjm.py [-h] [--url URL] [--output OUTPUT] [--format FORMAT] [--list] [--version]
 
