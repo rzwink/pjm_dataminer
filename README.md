@@ -22,12 +22,16 @@ Go to the page, click on explore data.  In google chrome
 
 ### Run the data collection script, examples
 ```
-python fetch_pjm_csv.py --list
-python fetch_pjm_csv.py -u pnode
-python fetch_pjm_csv.py -u pnode -o pnode.csv
-python fetch_pjm_csv.py -u ops_sum_prev_period
-python fetch_pjm_csv.py -u hrl_load_metered
-python fetch_pjm_csv.py -u solar_gen
+python fetch_pjm.py --list
+python fetch_pjm.py --help
+python fetch_pjm.py -u pnode -f csv
+python fetch_pjm.py -u pnode -f json
+python fetch_pjm.py -u pnode -f xls
+python fetch_pjm.py -u pnode -f stdout
+python fetch_pjm.py -u pnode -o pnode.csv
+python fetch_pjm.py -u ops_sum_prev_period
+python fetch_pjm.py -u hrl_load_metered
+python fetch_pjm.py -u solar_gen
 ```
 optionally add -o output.csv to override filename
 
