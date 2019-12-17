@@ -8,14 +8,13 @@ from get_pjm_url import get_pjm_list
 from get_pjm_url import get_pjm_url
 from get_subscription_headers import get_subsription_headers
 
-# create header with subscription key
-headers = get_subsription_headers()
-
 # initiate the parser
 parser = argparse.ArgumentParser()
 
 # add long and short argument
-parser.add_argument("--url", "-u", help="set url for data extraction")
+parser.add_argument(
+    "--url", "-u", help="set url key for data extraction. exp. solar_gen, pnode, etc."
+)
 parser.add_argument("--output", "-o", help="set filename to output")
 parser.add_argument(
     "--format",
@@ -35,6 +34,9 @@ parser.add_argument("--version", action="version", version="%(prog)s 1.0")
 
 # read arguments from the command line
 args = parser.parse_args()
+
+# create header with subscription key
+headers = get_subsription_headers()
 
 if args.list is True:
     list = get_pjm_list()

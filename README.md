@@ -4,7 +4,7 @@ usage: fetch_pjm.py [-h] [--url URL] [--output OUTPUT] [--format FORMAT] [--list
 
 optional arguments:
   -h, --help            show this help message and exit
-  --url URL, -u URL     set url for data extraction
+  --url URL, -u URL     set url key for data extraction. exp. solar_gen, pnode, etc.
   --output OUTPUT, -o OUTPUT
                         set filename to output
   --format FORMAT, -f FORMAT
