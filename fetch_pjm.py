@@ -15,8 +15,8 @@ parser = argparse.ArgumentParser()
 
 # add long and short argument
 parser.add_argument("--url", "-u", help="set url for data extraction")
-parser.add_argument("--output", "-o", help="set filename to output csv")
-parser.add_argument("--format", "-f", help="set format for output", default="csv")
+parser.add_argument("--output", "-o", help="set filename to output")
+parser.add_argument("--format", "-f", help="set format for output.  can by csv, json, xls or stdout.", default="csv")
 parser.add_argument("--list", "-l", help="output list of all urls", default=False, dest='list', action='store_true')
 parser.add_argument('--version', action='version', version='%(prog)s 1.0')
 

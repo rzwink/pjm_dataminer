@@ -1,29 +1,33 @@
 # PJM data miner scripts to make exporting data easier
+```text
+usage: fetch_pjm.py [-h] [--url URL] [--output OUTPUT] [--format FORMAT] [--list] [--version]
 
+optional arguments:
+  -h, --help            show this help message and exit
+  --url URL, -u URL     set url for data extraction
+  --output OUTPUT, -o OUTPUT
+                        set filename to output
+  --format FORMAT, -f FORMAT
+                        set format for output. can by csv, json, xls or stdout.
+  --list, -l            output list of all urls
+  --version             show program's version number and exit
+
+
+```
 ## Install
 
 ### Install Python3 + Pip + Virtualenv
-```
+```shell script
 virtualenv venv -p python3
 . ./venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Look at the pjm_urls.py script for valid urls
-This file contains a key:value mapping of "url" to the actual url.  These urls come from the data that populates the 
-Explore Data link found on these pages:
-http://dataminer2.pjm.com/feed/hrl_load_metered/definition
-Go to the page, click on explore data.  In google chrome 
-
-1. launch the "inspect" tool, 
-2. select the network tab, 
-3. Click download csv
-4. Copy the link to the pjm_urls.py 
-
 ### Run the data collection script, examples
-```
-python fetch_pjm.py --list
+```shell script
 python fetch_pjm.py --help
+python fetch_pjm.py --version
+python fetch_pjm.py --list
 python fetch_pjm.py -u pnode -f csv
 python fetch_pjm.py -u pnode -f json
 python fetch_pjm.py -u pnode -f xls
@@ -33,7 +37,7 @@ python fetch_pjm.py -u ops_sum_prev_period
 python fetch_pjm.py -u hrl_load_metered
 python fetch_pjm.py -u solar_gen
 ```
-optionally add -o output.csv to override filename
+
 
 ### Available URLs
 |url|description|
